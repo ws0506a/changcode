@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-QingCode 测试脚本
+ChangCode 测试脚本
 """
 
 import os
@@ -9,7 +9,7 @@ import tempfile
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from config import QingCodeConfig, LLMConfig, ToolConfig
+from config import ChangCodeConfig, LLMConfig, ToolConfig
 from tools import ToolSystem, ToolResult
 from llm import create_llm, OpenAILLM
 
@@ -133,7 +133,7 @@ def test_config():
         print(f"  {name}: {config.model} ({config.provider})")
 
     print("\n[测试] 默认配置")
-    config = QingCodeConfig()
+    config = ChangCodeConfig()
     print(f"  LLM: {config.llm.model}")
     print(f"  Agent最大迭代: {config.agent.max_iterations}")
     print(f"  工具最大文件: {config.tools.max_file_size_mb}MB")
@@ -156,7 +156,7 @@ def test_agent():
 
     from agent import Agent
 
-    config = QingCodeConfig()
+    config = ChangCodeConfig()
     config.llm.api_key = api_key
     config.llm.model = "deepseek-chat"
     config.llm.base_url = "https://api.deepseek.com/v1"

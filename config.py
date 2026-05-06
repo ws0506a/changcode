@@ -48,7 +48,7 @@ class AgentConfig:
 
 
 @dataclass
-class QingCodeConfig:
+class ChangCodeConfig:
     """QingCode 总配置"""
     llm: LLMConfig = None
     tools: ToolConfig = None
@@ -65,9 +65,9 @@ class QingCodeConfig:
             self.agent = AgentConfig()
 
 
-def load_config() -> QingCodeConfig:
+def load_config() -> ChangCodeConfig:
     """加载配置"""
-    config = QingCodeConfig()
+    config = ChangCodeConfig()
 
     # 从环境变量读取
     if os.getenv("QINGCODE_API_KEY"):

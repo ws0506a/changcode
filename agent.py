@@ -8,7 +8,7 @@ from dataclasses import dataclass
 
 from llm import BaseLLM, LLMResponse, ToolCall, create_llm
 from tools import ToolSystem, ToolResult
-from config import LLMConfig, AgentConfig, QingCodeConfig
+from config import LLMConfig, AgentConfig, ChangCodeConfig
 
 
 @dataclass
@@ -23,7 +23,7 @@ class AgentState:
 class Agent:
     """Agent 核心"""
 
-    def __init__(self, config: QingCodeConfig):
+    def __init__(self, config: ChangCodeConfig):
         self.config = config
         self.llm = create_llm(config.llm)
         self.tool_system = ToolSystem(config.tools)

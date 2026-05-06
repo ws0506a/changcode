@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-QingCode - 由开源大模型驱动的AI编程助手
+ChangCode - 由开源大模型驱动的AI编程助手
 类似 Claude Code，但使用国产开源模型
 """
 
@@ -9,7 +9,7 @@ import sys
 import argparse
 from pathlib import Path
 
-from config import QingCodeConfig, load_config, PRESET_CONFIGS
+from config import ChangCodeConfig, load_config, PRESET_CONFIGS
 from terminal import Terminal
 from agent import Agent
 
@@ -17,15 +17,15 @@ from agent import Agent
 def main():
     """主入口"""
     parser = argparse.ArgumentParser(
-        description="QingCode - AI编程助手",
+        description="ChangCode - AI编程助手",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 示例:
-  qingcode                          # 启动交互模式
-  qingcode -p "帮我写一个排序算法"    # 单次查询
-  qingcode --model deepseek-coder   # 使用特定模型
-  qingcode --api-key sk-xxx         # 指定API密钥
-  qingcode --base-url http://...    # 指定API地址
+  changcode                          # 启动交互模式
+  changcode -p "帮我写一个排序算法"    # 单次查询
+  changcode --model deepseek-coder   # 使用特定模型
+  changcode --api-key sk-xxx         # 指定API密钥
+  changcode --base-url http://...    # 指定API地址
         """
     )
 
@@ -39,7 +39,7 @@ def main():
     parser.add_argument("--verbose", "-v", action="store_true", help="详细输出")
     parser.add_argument("--auto-confirm", "-y", action="store_true", 
                        help="自动确认所有操作")
-    parser.add_argument("--version", action="version", version="QingCode 1.0.0")
+    parser.add_argument("--version", action="version", version="ChangCode 1.0.0")
 
     args = parser.parse_args()
 
@@ -70,8 +70,8 @@ def main():
             print("错误: 未设置 API Key")
             print("请通过以下方式之一设置:")
             print("  1. 设置环境变量: export DEEPSEEK_API_KEY=your-key")
-            print("  2. 命令行参数: qingcode --api-key your-key")
-            print("  3. 在 ~/.qingcode/config.json 中配置")
+            print("  2. 命令行参数: changcode --api-key your-key")
+            print("  3. 在 ~/.changcode/config.json 中配置")
             sys.exit(1)
 
     # 设置默认 base_url (DeepSeek)

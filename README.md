@@ -1,6 +1,6 @@
-# QingCode - 由开源大模型驱动的AI编程助手
+# ChangCode - 由开源大模型驱动的AI编程助手
 
-QingCode 是一个类似 Claude Code 的 AI 编程助手，但使用国产开源大模型（DeepSeek、GLM、Qwen等）作为后端。
+ChangCode 是一个类似 Claude Code 的 AI 编程助手，但使用国产开源大模型（DeepSeek、GLM、Qwen等）作为后端。
 
 ## 特性
 
@@ -16,8 +16,8 @@ QingCode 是一个类似 Claude Code 的 AI 编程助手，但使用国产开源
 
 ```bash
 # 克隆仓库
-git clone https://github.com/your-username/qingcode.git
-cd qingcode
+git clone https://github.com/your-username/changcode.git
+cd changcode
 
 # 安装依赖
 pip install -r requirements.txt
@@ -32,26 +32,26 @@ pip install -r requirements.txt
 export DEEPSEEK_API_KEY=your-api-key
 
 # 启动交互模式
-python qingcode.py
+python changcode.py
 
 # 单次查询模式
-python qingcode.py -p "帮我写一个快速排序算法"
+python changcode.py -p "帮我写一个快速排序算法"
 ```
 
 ### 命令行参数
 
 ```bash
 # 指定模型
-python qingcode.py --model deepseek-coder
+python changcode.py --model deepseek-coder
 
 # 指定API地址
-python qingcode.py --base-url https://api.deepseek.com/v1
+python changcode.py --base-url https://api.deepseek.com/v1
 
 # 详细输出
-python qingcode.py -v
+python changcode.py -v
 
 # 自动确认所有操作
-python qingcode.py -y
+python changcode.py -y
 ```
 
 ### 支持的模型
